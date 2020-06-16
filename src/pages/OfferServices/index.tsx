@@ -1,10 +1,11 @@
-import React, { ChangeEvent, useRef } from 'react';
+import React, { useRef } from 'react';
 import Header from '../../components/Header';
 import Wave from '../../components/Wave';
 import MainTextCard from '../../components/MainTextCard'
 import ImageContainer from '../../components/ImageContainer';
+import GapTop from '../../components/GapTop';
 import './style.css';
-import { FiAnchor, FiCheckSquare, FiArrowUp } from 'react-icons/fi';
+import { FiAnchor, FiCheckSquare, FiArrowUp, FiLink } from 'react-icons/fi';
 import react from '../../assets/techs/react.svg';
 import java from '../../assets/techs/java.svg';
 import node from '../../assets/techs/node.svg';
@@ -23,11 +24,31 @@ const OfferServices = () => {
         scrollToRef(gapTopRef);
     }
 
+    
     return (
         <div id="offer-services-page">
             
             <div ref={gapTopRef} className="offer-services-menu">
+                
                 <Header title="qualque um"/>
+                <div className="links-such-things">
+                    <div className="something-cool">
+                        <MainTextCard 
+                            icon={FiLink}
+                            level="main-text"
+                            title="Links"
+                            content=""
+                        />
+                    </div>
+                    <div className="something-cool">
+                        <MainTextCard 
+                            icon={FiLink}
+                            level="main-text"
+                            title="Links"
+                            content=""
+                        />
+                    </div>
+                </div>
             </div>
             <main className="offer-services-main">
                 <div className="title-offer-services">
@@ -344,12 +365,8 @@ const OfferServices = () => {
                 
             </main>
             <Wave/>
-            <div 
-                className="gap-top"
-                onClick={scrollToTop}
-            >
-                <FiArrowUp/>    
-            </div>
+            <GapTop handleScroll={ scrollToTop }/>
+            
         </div>
     );
 }

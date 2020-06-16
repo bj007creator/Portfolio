@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { FiLogIn } from 'react-icons/fi'
 import './style.css';
 import Header from '../../components/Header/index';
@@ -6,13 +6,21 @@ import { Link } from 'react-router-dom';
 import { FiCheckSquare, FiArrowRight, FiChevronsRight, FiAperture } from 'react-icons/fi';
 import Wave from '../../components/Wave';
 import MainTextCard from '../../components/MainTextCard';
+import GapTop from '../../components/GapTop';
 
 import annotation from '../../assets/undraw_annotation_7das.svg';
 
 const Home = () => {
+
+    const scrollToRef = (ref : any) => window.scrollTo(0, ref.offsetTop);
+    const gapTopRef = useRef<HTMLDivElement>(null);
+    const scrollToTop = () => {
+        scrollToRef(gapTopRef);
+    }
+
     return (
         <>
-            <div id="home-page">
+            <div ref={gapTopRef} id="home-page">
                 <Header title="letsgo"/>
                 <main className="content-main">
                     <div className="picture">
@@ -48,9 +56,9 @@ const Home = () => {
                         <img src={annotation} alt="annotation-image"/>
                     </div>
                     
-                    
                 </aside>
                 <Wave/>
+                <GapTop handleScroll={ scrollToTop }/>
             </div>
         </>
     );

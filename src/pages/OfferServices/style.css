@@ -98,19 +98,12 @@
     width: 400px;
 }
 
-.gap-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border : 2px solid #003;
-    font-size: 3.5em;
-    border-radius: 50%;
-    background: linear-gradient(180deg, #009, #001);
+.something-cool > div > div {
     cursor: pointer;
+    background: #005;
+    border-bottom : 5px solid #003;
 }
-html {
-    scroll-behavior: smooth;
+.links-such-things {
+    margin-top: 400px;
+    margin-left: 10px;
 }
-

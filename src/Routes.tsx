@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import CreatePoint from './pages/CreatePoint';
 import DoneProjects from './pages/DoneProjects';
 import OfferServices from './pages/OfferServices';
+import Contacts from './pages/Contacts';
 
 const Routes = () => {
     return (
@@ -14,6 +15,7 @@ const Routes = () => {
             <Route component={ CreatePoint } path="/create-point"/>
             <Route component={ DoneProjects } path="/done-projects"/>
             <Route component={ OfferServices } path="/offer-services"/>
+            <Route component={ Contacts } path="/contacts"/>
         </BrowserRouter>
     );
 }
