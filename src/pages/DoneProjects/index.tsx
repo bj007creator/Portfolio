@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './style.css';
 import Header from '../../components/Header';
 import Wave from '../../components/Wave';
@@ -9,14 +9,22 @@ import java from '../../assets/techs/java.svg';
 import node from '../../assets/techs/node.svg';
 import ts from '../../assets/techs/ts.svg';
 import ImageContainer from '../../components/ImageContainer';
+import GapTop from '../../components/GapTop';
 import lifeup from '../../assets/projects/lifeup.png';
 import rpgzone from '../../assets/projects/rpgzone.png';
 import artMinas from '../../assets/projects/artminas.png';
 
 const DoneProjects = () => {
+
+    const scrollToRef = (ref : any) => window.scrollTo(0, ref.offsetTop);
+    const gapTopRef = useRef<HTMLDivElement>(null);
+    const scrollToTop = () => {
+        scrollToRef(gapTopRef);
+    }
+
     return (
         <div id="done-projects-page">
-            <div className="aside-projects-left">
+            <div ref={gapTopRef} className="aside-projects-left">
                 <Header title="letsgo"/>
                 <div className="first-left-item">
                     <MainTextCard 
@@ -162,6 +170,7 @@ const DoneProjects = () => {
                 
             </aside>
             <Wave/>
+            <GapTop handleScroll={ scrollToTop }/>
         </div>
     );
 }

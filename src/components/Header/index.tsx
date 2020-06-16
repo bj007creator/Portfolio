@@ -38,7 +38,7 @@ const Header : React.FC<HeaderProps> = (props) => {
                             <span>Serviços ofertados</span>
                         </li>
                     </Link>
-                    <Link className="underline" to="/">
+                    <Link className="underline" to="/contacts">
                         <li className="cursor">
                             <FiPhoneCall className="list-icon-item"/>
                             <span>Contatos</span>
