@@ -1,33 +1,41 @@
-#home-page{
+import styled from 'styled-components';
+
+
+export const HomePage = styled.div `
     display: grid;
     position: relative;
     grid-template-columns: 2fr 3fr 2fr;
     height: 100vh;
-}
-.content-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.content-right > div:first-child{
-    margin-top: 100px;
-}
-.content-right > div > img{
-    width: 500px;
-    height: 200px;
-}
-
-
-.content-main{
+`;
+export const ContentRight = styled.aside  `
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-top: 200px;
-    background: linear-gradient(90deg, #005, #001);
-}
+    div:first-child {
+        margin-top: 100px;
+    }
+    div > img {
+        width: 500px;
+        height: 200px;
+    }
+`;
 
+
+export const ContentMain = styled.main `
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+    background: linear-gradient(
+        90deg,
+        ${ (props) => props.theme.colors.primary },
+        ${ (props) => props.theme.colors.background }
+    );
+`;
+/*
 .button {
     width: 200px;
     height: 50px;
@@ -57,6 +65,7 @@
     border-bottom: 5px solid #002;
     box-shadow: 0 0 10px #008;
 }
+
 .aside-text{
     display: flex;
     flex-direction: row;
@@ -66,30 +75,27 @@
     background: #002;
     padding: 10px;
     border-radius: 20px;
-}
-.content-right {
-    padding-top: 200px;
-}
+}*/
     
 
-.picture {
+export const Picture = styled.div `
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 20px 0;
-    background: #001;
+    background: ${ (props) => props.theme.colors.background };
     padding: 50px;
     border-radius: 40px;
-}
-.picture img {
-    width: 200px;
-    height: 200px;
-    border-radius: 20px;
-}
-.picture h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 20px;
+    }
+    h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+`;

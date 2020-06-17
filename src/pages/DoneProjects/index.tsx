@@ -1,9 +1,25 @@
 import React, { useRef } from 'react';
-import './style.css';
+import { 
+    AsideProjectsLeft,
+    AsideProjectsRight,
+    DoneProjectsMain,
+    DoneProjectsPage,
+    ProjectContainer,
+    VideoContainer
+} from './style';
 import Header from '../../components/Header';
 import Wave from '../../components/Wave';
 import MainTextCard from '../../components/MainTextCard';
-import { FiAirplay, FiArrowDown, FiLink, FiBookmark } from 'react-icons/fi';
+import { 
+    FiAirplay,
+    FiArrowDown, 
+    FiLink, 
+    FiBookmark,
+    FiBriefcase,
+    FiAward,
+    FiYoutube,
+    FiCheck
+} from 'react-icons/fi';
 import react from '../../assets/techs/react.svg';
 import java from '../../assets/techs/java.svg';
 import node from '../../assets/techs/node.svg';
@@ -14,7 +30,10 @@ import lifeup from '../../assets/projects/lifeup.png';
 import rpgzone from '../../assets/projects/rpgzone.png';
 import artMinas from '../../assets/projects/artminas.png';
 
-const DoneProjects = () => {
+import ThemeToggleable from '../../utils/ThemeToggleable';
+import ToggleTheme from '../../components/ToggleTheme';
+
+const DoneProjects : React.FC<ThemeToggleable> = ({ toggleTheme }) => {
 
     const scrollToRef = (ref : any) => window.scrollTo(0, ref.offsetTop);
     const gapTopRef = useRef<HTMLDivElement>(null);
@@ -23,8 +42,9 @@ const DoneProjects = () => {
     }
 
     return (
-        <div id="done-projects-page">
-            <div ref={gapTopRef} className="aside-projects-left">
+        <DoneProjectsPage>
+            <AsideProjectsLeft>
+                <div ref={gapTopRef} className="aside-projects-left"></div>
                 <Header title="letsgo"/>
                 <div className="first-left-item">
                     <MainTextCard 
@@ -52,16 +72,16 @@ const DoneProjects = () => {
                 />
                 <br/>
                 <MainTextCard 
-                    icon={FiAirplay}
+                    icon={FiCheck}
                     level="main-text"
-                    title="Projetos"
-                    content="Este é o primiro projeto cujo o qual é baseado nos principais conhecimentos que eu tenho."
+                    title="Anexos"
+                    content="Algo para acrescentar aqui depois"
                 />
-            </div>
+            </AsideProjectsLeft>
             
-            <main className="done-projects-main">
+            <DoneProjectsMain>
                 <MainTextCard 
-                    icon={FiAirplay}
+                    icon={FiBriefcase}
                     level="main-text"
                     title="Projetos"
                     content="Este é o primiro projeto cujo o qual é baseado nos principais conhecimentos que eu tenho."
@@ -69,24 +89,24 @@ const DoneProjects = () => {
                 
                 
                 <MainTextCard 
-                    icon={FiAirplay}
+                    icon={FiAward}
                     level="main-text"
                     title="ArtMinas"
                     content=""
                 />
                 
-                <div className="project-container">
+                <ProjectContainer>
                     <img src={artMinas} alt="artMinas"/>
-                </div>
+                </ProjectContainer>
                 <MainTextCard 
-                    icon={FiArrowDown}
+                    icon={FiYoutube}
                     level="second-text"
                     title="Vídeo"
                     content=""
                 />
-                <div className="video-container">
+                <VideoContainer>
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/V_QYWTtkC7I" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                </div>
+                </VideoContainer>
                 <MainTextCard 
                     icon={FiArrowDown}
                     level="second-text"
@@ -97,24 +117,24 @@ const DoneProjects = () => {
                 
 
                 <MainTextCard 
-                    icon={FiAirplay}
+                    icon={FiAward}
                     level="main-text"
                     title="RPGZone"
                     content=""
                 />
                 
-                <div className="project-container">
+                <ProjectContainer>
                     <img src={rpgzone} alt="RPGZone"/>
-                </div>
+                </ProjectContainer>
                 <MainTextCard 
-                    icon={FiArrowDown}
+                    icon={FiYoutube}
                     level="second-text"
                     title="Vídeo"
                     content=""
                 />
-                <div className="video-container">
+                <VideoContainer>
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5QnchOV_7Vg" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                </div>
+                </VideoContainer>
                 <MainTextCard 
                     icon={FiArrowDown}
                     level="second-text"
@@ -125,32 +145,32 @@ const DoneProjects = () => {
                 
                 
                 <MainTextCard 
-                    icon={FiAirplay}
+                    icon={FiAward}
                     level="main-text"
                     title="Lifeup"
                     content=""
                 />
-                <div className="project-container">
+                <ProjectContainer>
                     <img src={lifeup} alt="lifeup"/>
-                </div>
+                </ProjectContainer>
                 <MainTextCard 
-                    icon={FiArrowDown}
+                    icon={FiYoutube}
                     level="second-text"
                     title="Vídeo"
                     content=""
                 />
-                <div className="video-container">
+                <VideoContainer>
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2W7sIg2_tlc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameBorder={0} allowFullScreen></iframe>
-                </div>
+                </VideoContainer>
                 <MainTextCard 
                     icon={FiArrowDown}
                     level="second-text"
                     title="Especificações"
                     content="Este é o primiro projeto cujo o qual é baseado nos principais conhecimentos que eu tenho."
                 />
-            </main>
-            <aside className="aside-projects-right">
-                <div className="first-div-aside-right">
+            </DoneProjectsMain>
+            <AsideProjectsRight>
+                <div className="first-div-aside-right div-aside-right ">
                     <MainTextCard 
                         icon={FiLink}
                         level="main-text"
@@ -159,7 +179,7 @@ const DoneProjects = () => {
                     />
                     
                 </div>
-                <div>
+                <div className="div-aside-right">
                     <MainTextCard 
                         icon={FiBookmark}
                         level="main-text"
@@ -168,10 +188,11 @@ const DoneProjects = () => {
                     />
                 </div>
                 
-            </aside>
+            </AsideProjectsRight>
+            <ToggleTheme toggleTheme={toggleTheme}/>
             <Wave/>
             <GapTop handleScroll={ scrollToTop }/>
-        </div>
+        </DoneProjectsPage>
     );
 }
 export default DoneProjects;

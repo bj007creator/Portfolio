@@ -4,14 +4,36 @@ import Wave from '../../components/Wave';
 import MainTextCard from '../../components/MainTextCard'
 import ImageContainer from '../../components/ImageContainer';
 import GapTop from '../../components/GapTop';
-import './style.css';
-import { FiAnchor, FiCheckSquare, FiArrowUp, FiLink } from 'react-icons/fi';
+import { 
+    OfferServicesPage,
+    Overlayer,
+    AnnotationsContainer,
+    LinksSuchThings,
+    OfferServicesMenu,
+    OfferServicesMain,
+    TitleOfferServices,
+    ServicesContainer,
+    PackageContent,
+    MarginsTextContainer
+} from './style';
+import { 
+    FiAnchor, 
+    FiCheckSquare, 
+    FiArrowUp, 
+    FiLink,
+    FiDollarSign,
+    FiShield,
+    FiStar
+} from 'react-icons/fi';
 import react from '../../assets/techs/react.svg';
 import java from '../../assets/techs/java.svg';
 import node from '../../assets/techs/node.svg';
 import ts from '../../assets/techs/ts.svg';
 
-const OfferServices = () => {
+import ThemeToggleable from '../../utils/ThemeToggleable';
+import ToggleTheme from '../../components/ToggleTheme';
+
+const OfferServices : React.FC<ThemeToggleable> = ({ toggleTheme }) => {
     
     function handleSelectServices (event : any) {
         event.target.className =    event.target.className === "overlayer" ? 
@@ -26,40 +48,40 @@ const OfferServices = () => {
 
     
     return (
-        <div id="offer-services-page">
+        <OfferServicesPage>
             
-            <div ref={gapTopRef} className="offer-services-menu">
-                
+            <OfferServicesMenu>
+            <div ref={gapTopRef}></div>
                 <Header title="qualque um"/>
-                <div className="links-such-things">
-                    <div className="something-cool">
+                <LinksSuchThings>
+                    <AnnotationsContainer>
                         <MainTextCard 
                             icon={FiLink}
                             level="main-text"
                             title="Links"
                             content=""
                         />
-                    </div>
-                    <div className="something-cool">
+                    </AnnotationsContainer>
+                    <AnnotationsContainer>
                         <MainTextCard 
-                            icon={FiLink}
+                            icon={FiDollarSign}
                             level="main-text"
-                            title="Links"
+                            title="Pagamento"
                             content=""
                         />
-                    </div>
-                </div>
-            </div>
-            <main className="offer-services-main">
-                <div className="title-offer-services">
+                    </AnnotationsContainer>
+                </LinksSuchThings>
+            </OfferServicesMenu>
+            <OfferServicesMain>
+                <TitleOfferServices>
                     <MainTextCard
                         icon={FiAnchor}
                         level="main-text"
                         title="Serviços"
                         content=""
                     />
-                </div>
-                <div className="services-container">
+                </TitleOfferServices>
+                <ServicesContainer>
                     <div className="services-content">
                         <div>
                             <ImageContainer
@@ -67,9 +89,9 @@ const OfferServices = () => {
                                 legend="React JS"
                             />
                         </div>
-                        <div className="margins-text-container">
+                        <MarginsTextContainer>
                             <MainTextCard
-                                icon={FiAnchor}
+                                icon={FiShield}
                                 level="main-text"
                                 title="Site Simples"
                                 content="Design básico sem muitas animações e sem sistemas avançados de pagamento por exemplo"
@@ -80,11 +102,13 @@ const OfferServices = () => {
                                 title="R$ 200,00"
                                 content=""
                             />
-                        </div>
-                        <div 
-                            className="overlayer"
-                            onClick={handleSelectServices}
-                        ></div>
+                        </MarginsTextContainer>
+                        <Overlayer>
+                            <div 
+                                className="overlayer"
+                                onClick={handleSelectServices}
+                            ></div>
+                        </Overlayer>
                     </div>
 
                     <div className="services-content">
@@ -94,9 +118,9 @@ const OfferServices = () => {
                                 legend="Java"
                             />
                         </div>
-                        <div className="margins-text-container">
+                        <MarginsTextContainer>
                             <MainTextCard
-                                icon={FiAnchor}
+                                icon={FiShield}
                                 level="main-text"
                                 title="Site Simples"
                                 content="Design básico sem muitas animações e sem sistemas avançados de pagamento por exemplo"
@@ -107,11 +131,14 @@ const OfferServices = () => {
                                 title="R$ 200,00"
                                 content=""
                             />
-                        </div>
-                        <div 
-                            className="overlayer"
-                            onClick={handleSelectServices}
-                        ></div>
+                        </MarginsTextContainer>
+                        <Overlayer>
+                            <div 
+                                className="overlayer"
+                                onClick={handleSelectServices}
+                            ></div>
+                        </Overlayer>
+                        
                     </div>
 
                     <div className="services-content-average">
@@ -121,9 +148,9 @@ const OfferServices = () => {
                                 legend="Typescript"
                             />
                         </div>
-                        <div className="margins-text-container">
+                        <MarginsTextContainer>
                             <MainTextCard
-                                icon={FiAnchor}
+                                icon={FiShield}
                                 level="main-text"
                                 title="Site Simples"
                                 content="Design básico sem muitas animações e sem sistemas avançados de pagamento por exemplo"
@@ -134,11 +161,14 @@ const OfferServices = () => {
                                 title="R$ 255,00"
                                 content=""
                             />
-                        </div>
-                        <div 
-                            className="overlayer"
-                            onClick={handleSelectServices}
-                        ></div>
+                        </MarginsTextContainer>
+                        
+                        <Overlayer>
+                            <div 
+                                className="overlayer"
+                                onClick={handleSelectServices}
+                            ></div>
+                        </Overlayer>
                     </div>
 
                     <div className="services-content-average">
@@ -148,9 +178,9 @@ const OfferServices = () => {
                                 legend="Node JS"
                             />
                         </div>
-                        <div className="margins-text-container">
+                        <MarginsTextContainer>
                             <MainTextCard
-                                icon={FiAnchor}
+                                icon={FiShield}
                                 level="main-text"
                                 title="Site Simples"
                                 content="Design básico sem muitas animações e sem sistemas avançados de pagamento por exemplo"
@@ -161,11 +191,13 @@ const OfferServices = () => {
                                 title="R$ 200,00"
                                 content=""
                             />
-                        </div>
-                        <div 
-                            className="overlayer"
-                            onClick={handleSelectServices}
-                        ></div>
+                        </MarginsTextContainer>
+                        <Overlayer>
+                            <div 
+                                className="overlayer"
+                                onClick={handleSelectServices}
+                            ></div>
+                        </Overlayer>
                     </div>
 
                     <div className="services-content">
@@ -175,9 +207,9 @@ const OfferServices = () => {
                                 legend="React JS"
                             />
                         </div>
-                        <div className="margins-text-container">
+                        <MarginsTextContainer>
                             <MainTextCard
-                                icon={FiAnchor}
+                                icon={FiShield}
                                 level="main-text"
                                 title="Site Simples"
                                 content="Design básico sem muitas animações e sem sistemas avançados de pagamento por exemplo"
@@ -188,48 +220,21 @@ const OfferServices = () => {
                                 title="R$ 200,00"
                                 content=""
                             />
-                        </div>
-                        <div 
-                            className="overlayer"
-                            onClick={handleSelectServices}
-                        ></div>
-                    </div>
-
-
-                    <div className="services-content">
-                        
-                        <div className="margins-text-container">
-                            <MainTextCard
-                                icon={FiAnchor}
-                                level="main-text"
-                                title="Site Simples"
-                                content="Design básico sem muitas animações e sem sistemas avançados de pagamento por exemplo"
-                            />
-                            <MainTextCard
-                                icon={FiCheckSquare}
-                                level="main-text"
-                                title="R$ 200,00"
-                                content=""
-                            />
-                        </div>
-                        <div>
-                            <ImageContainer
-                                image={react}
-                                legend="React JS"
-                            />
-                        </div>
-                        <div 
-                            className="overlayer"
-                            onClick={handleSelectServices}
-                        ></div>
+                        </MarginsTextContainer>
+                        <Overlayer>
+                            <div 
+                                className="overlayer"
+                                onClick={handleSelectServices}
+                            ></div>
+                        </Overlayer>
                     </div>
 
 
                     <div className="services-content">
                         
-                        <div className="margins-text-container">
+                        <MarginsTextContainer>
                             <MainTextCard
-                                icon={FiAnchor}
+                                icon={FiShield}
                                 level="main-text"
                                 title="Site Simples"
                                 content="Design básico sem muitas animações e sem sistemas avançados de pagamento por exemplo"
@@ -240,31 +245,64 @@ const OfferServices = () => {
                                 title="R$ 200,00"
                                 content=""
                             />
-                        </div>
+                        </MarginsTextContainer>
                         <div>
                             <ImageContainer
                                 image={react}
                                 legend="React JS"
                             />
                         </div>
-                        <div 
-                            className="overlayer"
-                            onClick={handleSelectServices}
-                        ></div>
+                        <Overlayer>
+                            <div 
+                                className="overlayer"
+                                onClick={handleSelectServices}
+                            ></div>
+                        </Overlayer>
                     </div>
 
-                </div>
+
+                    <div className="services-content">
+                        
+                        <MarginsTextContainer>
+                            <MainTextCard
+                                icon={FiShield}
+                                level="main-text"
+                                title="Site Simples"
+                                content="Design básico sem muitas animações e sem sistemas avançados de pagamento por exemplo"
+                            />
+                            <MainTextCard
+                                icon={FiCheckSquare}
+                                level="main-text"
+                                title="R$ 200,00"
+                                content=""
+                            />
+                        </MarginsTextContainer>
+                        <div>
+                            <ImageContainer
+                                image={react}
+                                legend="React JS"
+                            />
+                        </div>
+                        <Overlayer>
+                            <div 
+                                className="overlayer"
+                                onClick={handleSelectServices}
+                            ></div>
+                        </Overlayer>
+                    </div>
+
+                </ServicesContainer>
                 
-                <div className="title-offer-services">
+                <TitleOfferServices>
                     <MainTextCard
-                        icon={FiAnchor}
+                        icon={FiStar}
                         level="main-text"
                         title="Pacotes"
                         content=""
                     />
-                </div>
+                </TitleOfferServices>
                 <div className="package-container">
-                    <div className="package-content">
+                    <PackageContent>
                         <div className="package-top">
                             <div>
                                 <ImageContainer
@@ -297,7 +335,7 @@ const OfferServices = () => {
                         </div>
                         <div className="package-price">
                             <MainTextCard
-                                icon={FiAnchor}
+                                icon={FiStar}
                                 level="main-text"
                                 title="Combo Completo"
                                 content="Descrição do pacote"
@@ -310,9 +348,9 @@ const OfferServices = () => {
                             />
                         </div>
                         
-                    </div>
+                    </PackageContent>
 
-                    <div className="package-content">
+                    <PackageContent>
                         <div className="package-top">
                             <div>
                                 <ImageContainer
@@ -345,7 +383,7 @@ const OfferServices = () => {
                         </div>
                         <div className="package-price">
                             <MainTextCard
-                                icon={FiAnchor}
+                                icon={FiStar}
                                 level="main-text"
                                 title="Combo Completo"
                                 content="Descrição do pacote"
@@ -358,16 +396,17 @@ const OfferServices = () => {
                             />
                         </div>
                         
-                    </div>
+                    </PackageContent>
 
                 </div>
 
                 
-            </main>
+            </OfferServicesMain>
+            <ToggleTheme toggleTheme={toggleTheme}/>
             <Wave/>
             <GapTop handleScroll={ scrollToTop }/>
             
-        </div>
+        </OfferServicesPage>
     );
 }
 

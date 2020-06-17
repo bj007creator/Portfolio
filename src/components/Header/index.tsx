@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-import './style.css';
+import { Sidebar } from './style';
 import { FaBars, FaEject } from 'react-icons/fa';
 import { FiUser, FiCheckCircle, FiTarget, FiPhoneCall, FiChevronsLeft } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
@@ -13,7 +13,7 @@ const Header : React.FC<HeaderProps> = (props) => {
     const [navClass, setNavClass] = useState("header-hidden header-show");
     
     return (
-        <header className="sidebar">
+        <Sidebar>
             <FaBars 
                 className="bars-icon"
                 onClick={ () => setNavClass("header-show") }
@@ -54,7 +54,7 @@ const Header : React.FC<HeaderProps> = (props) => {
                     </li>
                 </ul>
             </nav>
-        </header>
+        </Sidebar>
     );
 }
 export default Header;
