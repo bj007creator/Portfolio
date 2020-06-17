@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+import { ContentMainCard } from './style';
 
 interface MainTextCardProps {
     icon : any,
@@ -10,13 +10,13 @@ interface MainTextCardProps {
 
 const MainTextCard : React.FC<MainTextCardProps> = (props) => {
     return (
-        <div className="content-main-card">
+        <ContentMainCard>
             <div className={`${props.level}`}>
                 <props.icon/>
                 <span>{props.title}</span>
             </div>
             <p>{props.content}</p>
-        </div>
+        </ContentMainCard>
     );
 }
 

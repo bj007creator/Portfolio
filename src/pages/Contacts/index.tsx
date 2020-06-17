@@ -1,6 +1,12 @@
 import React, { useRef } from 'react';
-import './style.css';
-import { FiAlertCircle, FiArrowDown } from 'react-icons/fi';
+import {
+    AsideLeftContacts,
+    ContactsContent,
+    ContactsMain,
+    ContactsPage,
+    TitleContacts
+} from './style';
+import { FiInfo, FiArrowDown } from 'react-icons/fi';
 import Header from '../../components/Header';
 import Wave from '../../components/Wave';
 import MainTextCard from '../../components/MainTextCard';
@@ -10,7 +16,10 @@ import whatsapp from '../../assets/contacts/whatsapp.svg';
 import linkedin from '../../assets/contacts/linkedin.svg';
 import email from '../../assets/contacts/email.svg';
 
-const Contacts = () => {
+import ThemeToggleable from '../../utils/ThemeToggleable';
+import ToggleTheme from '../../components/ToggleTheme';
+
+const Contacts : React.FC<ThemeToggleable> = ( { toggleTheme } ) => {
 
     const scrollToRef = (ref : any) => window.scrollTo(0, ref.offsetTop);
     const gapTopRef = useRef<HTMLDivElement>(null);
@@ -19,20 +28,21 @@ const Contacts = () => {
     }
 
     return (
-        <div id="contacts-page">
-            <div ref={gapTopRef} className="aside-left-contacts">
+        <ContactsPage>
+            <AsideLeftContacts>
+                <div ref={gapTopRef}></div>
                 <Header title=""/>
-            </div>
-            <main className="contacts-main">
-                <div className="title-contacts">
+            </AsideLeftContacts>
+            <ContactsMain>
+                <TitleContacts>
                     <MainTextCard 
-                        icon={FiAlertCircle}
+                        icon={FiInfo}
                         level="main-text"
                         title="Contatos"
                         content=""
                     />
-                </div>
-                <div className="contacts-content">
+                </TitleContacts>
+                <ContactsContent>
                     <ImageContainer
                         image={email}
                         legend="Email"
@@ -46,9 +56,9 @@ const Contacts = () => {
                             content="mateus.silva.1229310@ pucminas.br"
                         />
                     </div>
-                </div>
+                </ContactsContent>
 
-                <div className="contacts-content">
+                <ContactsContent>
                     <ImageContainer
                         image={whatsapp}
                         legend="WhatsApp"
@@ -61,9 +71,9 @@ const Contacts = () => {
                             content="(031) 99801 - 2752"
                         />
                     </div>
-                </div>
+                </ContactsContent>
 
-                <div className="contacts-content">
+                <ContactsContent>
                     <ImageContainer
                         image={linkedin}
                         legend="Linkedin"
@@ -76,12 +86,13 @@ const Contacts = () => {
                             content="mateus.silva.1229310@ pucminas.br"
                         />
                     </div>
-                </div>
+                </ContactsContent>
 
-            </main>
+            </ContactsMain>
+            <ToggleTheme toggleTheme={toggleTheme}/>
             <Wave/>
             <GapTop handleScroll={ scrollToTop }/>
-        </div>
+        </ContactsPage>
     );
 }
 export default Contacts;

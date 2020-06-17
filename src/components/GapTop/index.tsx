@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './style.css';
+import { GapToTop } from './style';
 import { FiArrowUp } from 'react-icons/fi';
 
 interface GapTopProps {
@@ -9,12 +9,11 @@ interface GapTopProps {
 
 const GapTop : React.FC<GapTopProps> = (props) => {
     return (
-        <div 
-            className="gap-top"
+        <GapToTop
             onClick={ props.handleScroll }
         >
             <FiArrowUp/>    
-        </div>
+        </GapToTop>
     );
 }
 export default GapTop;
