@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const ContactsPage = styled.div `
     display: grid;
     grid-template-columns: 2fr 5fr;
+    @media (max-width: 1000px) {
+        grid-template-columns: 1fr;
+    }
     position: relative;
     height: 100vh;
 `;
@@ -42,10 +45,14 @@ export const ContactsContent = styled.div `
     position: relative;
     flex: 1;
     height: 550px;
-    margin : 10px 0;
+    margin : 5px 0;
+    @media (max-width: 1000px) {
+        min-width : 500px;
+    }
     > div {
         height : 100%;
         width : 100%;
+
     }
     div > div {
         z-index: 20;

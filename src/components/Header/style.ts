@@ -3,18 +3,21 @@ import styled from 'styled-components';
 export const Sidebar = styled.header `
     background: ${ (props) => props.theme.colors.primary };
     position: relative;
+    
     nav {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         transition-duration: 1s;
+        
     }
     nav.header-hidden {
         transform: translateX(-100%);
     }
     nav.header-show {
         z-index: 11;
+        
     }
     nav ul {
         display: flex;
