@@ -5,6 +5,9 @@ export const OfferServicesPage = styled.div `
     grid-template-columns: 2fr 5fr;
     position: relative;
     height: 100vh;
+    @media (max-width: 1000px) {
+        grid-template-columns: 1fr;
+    }
 `;
 export const OfferServicesMain = styled.main `
     width: 100%;
@@ -32,7 +35,11 @@ export const ServicesContainer = styled.div `
     flex-wrap: wrap;
     width: 100%;
     div.services-content-average {
+
         width: 50%;
+        @media (max-width: 1000px) {
+            width: 100%;
+        }
         display: grid;
         grid-template-rows: repeat(2, 1fr);
         cursor: pointer;
@@ -107,15 +114,32 @@ export const PackageContent = styled.div `
 `;
 
 export const AnnotationsContainer = styled.div `
+    z-index : 2000;
+    cursor : pointer;
     div {
+        
         div {
-            cursor: pointer;
+            
             background: ${ (props) => props.theme.colors.primary };
             border-bottom : 5px solid ${ (props) => props.theme.colors.secundary };
         }
     }
 `;
 export const LinksSuchThings = styled.div `
-    margin-top: 400px;
+    margin-top: 800px;
     margin-left: 10px;
 `;
+export const LinkLabel = styled.div `
+    
+    border-bottom : 2px solid ${ (props) => props.theme.colors.secundary };
+    border-radius : 20px;
+    
+    a {
+        text-decoration : none;
+        text-align : center;
+    }
+    p {
+        font-size: 1.2em;
+    }
+`;
+

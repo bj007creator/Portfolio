@@ -3,7 +3,11 @@ import styled from 'styled-components';
 export const WaveContainer = styled.div `
     position : absolute;
     width : 100%;
-    height : 100%;
+    
+    @media (max-width: 1000px) {
+        min-width : 530px;
+        width : 100%;
+    }
     .flex-wave{
         position: absolute;
         top : 0;

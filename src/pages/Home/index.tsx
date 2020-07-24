@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { HomePage, ContentRight, ContentMain, Picture } from './style';
 import Header from '../../components/Header/index';
-import { FiCheckSquare, FiArrowRight, FiAperture } from 'react-icons/fi';
+import { FiCheckSquare, FiArrowRight, FiAperture, FiAward } from 'react-icons/fi';
 import Wave from '../../components/Wave';
 import MainTextCard from '../../components/MainTextCard';
 import GapTop from '../../components/GapTop';
@@ -34,13 +34,33 @@ const Home : React.FC<ThemeToggleable> = ( { toggleTheme } ) => {
                         icon={FiCheckSquare}
                         level="main-text"
                         title="Sobre mim"
-                        content="Olá, prazer meu nome é Mateus, sou desenvolvedor fullstack à quase 2 anos, atualmente eu trabalho com as melhores tecnologias do mercado no desenvolvimento de aplicações mobile e web."
+                        content="Olá, prazer meu nome é Mateus, sou desenvolvedor fullstack à quase 2 anos, atualmente eu trabalho com as melhores tecnologias do mercado no desenvolvimento de aplicações mobile e web além de games 2d. Sou uma pessoa que busca sempre aprender e evoluir como pessoa e como profissional."
                     />
                     <MainTextCard 
                         icon={FiArrowRight}
                         level="second-text"
                         title="Faculdade"
                         content="Atualmente eu estou cursando Engenharia de software na Pontifícia Universidade Católica de Minas Gerais (Puc Minas)."
+                    />
+
+                    <MainTextCard 
+                        icon={FiAward}
+                        level="second-text"
+                        title="Premiações"
+                        content="Por dois semestres consecutivos, graças a Deus, eu e meu grupo recebemos o título de destaque na disciplina projeto interdisciplinar de software na universidade em que estudo esta disciplina se baseia na construção de um sistema completo por semestre e os projetos em que mencionei que ganharam o título estão listados abaixo : "
+                    />
+
+                    <MainTextCard 
+                        icon={FiArrowRight}
+                        level="second-text"
+                        title="1º semestre LifeUp (TIS I)"
+                        content="A descrição do projeto está na aba Projetos Finalizados."
+                    />
+                    <MainTextCard 
+                        icon={FiArrowRight}
+                        level="second-text"
+                        title="2º semestre RpgZone (TIS II)"
+                        content="A descrição do projeto está na aba Projetos Finalizados."
                     />
                     
                     
